@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SMART STICKY REVIEWER — Admin Widget</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div>
+          <h1>SMART STICKY REVIEWER</h1>
+          <p class="subtitle">Admin Widget (Editor / Dashboard)</p>
+        </div>
+        <div class="pill">Vanilla HTML/CSS/JS</div>
+      </header>
+
+      <section class="card">
+        <h2>Connection</h2>
+        <div class="grid-2">
+          <label class="field">
+            <span class="label">API Base URL</span>
+            <input id="apiBase" type="text" placeholder="http://localhost:5260" />
+            <span class="hint">Saved in your browser localStorage.</span>
+          </label>
+          <label class="field">
+            <span class="label">Site ID</span>
+            <input id="siteId" type="text" placeholder="demo-site" />
+            <span class="hint">Config is stored per Site ID.</span>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="loadBtn" class="btn">Load</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Plan & Features</h2>
+        <div class="grid-2">
+          <label class="field">
+            <span class="label">Plan</span>
+            <select id="plan">
+              <option value="Free">Free</option>
+              <option value="Pro">Pro</option>
+              <option value="Premium">Premium</option>
+            </select>
+            <span class="hint">Used to resolve features dynamically per siteId.</span>
+          </label>
+          <div class="field">
+            <span class="label">Feature availability (computed)</span>
+            <div id="features" class="features"></div>
+            <span class="hint">Premium-only settings are disabled if not enabled for the site.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Provider & Fallback</h2>
+        <div class="grid-2">
+          <label class="field">
+            <span class="label">Primary Review Provider</span>
+            <select id="primaryProvider">
+              <option value="Manual">Manual</option>
+              <option value="JudgeMe">JudgeMe</option>
+            </select>
+            <span class="hint">
+              JudgeMe provider is intentionally non-functional (no Judge.me API usage allowed) to demonstrate fallback behavior.
+            </span>
+          </label>
+
+          <label class="field">
+            <span class="label">Store owner email (for failure notifications)</span>
+            <input id="storeOwnerEmail" type="email" placeholder="owner@example.com" />
+            <span class="hint">Feature: EmailNotificationOnFailure (placeholder/no-op backend).</span>
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label class="field">
+            <span class="label">Manual rating (0–5)</span>
+            <input id="manualRating" type="number" step="0.1" min="0" max="5" placeholder="4.7" />
+            <span class="hint">Used as fallback #1 if primary provider fails.</span>
+          </label>
+          <label class="field">
+            <span class="label">Manual text (optional)</span>
+            <input id="manualText" type="text" placeholder="Rated 4.7/5 by 1,200 customers" />
+            <span class="hint">Shown alongside stars if rating is set.</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label">
+            Fallback text (optional)
+            <span id="fallbackTextLock" class="lock" title="Requires ManualFallbackText feature">LOCKED</span>
+          </span>
+          <textarea id="fallbackText" rows="3" placeholder="Trusted by thousands of happy customers."></textarea>
+          <span class="hint">Fallback #2 if manual rating is not configured and the feature is enabled.</span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Styling</h2>
+        <p class="subtitle">
+          Advanced styling is a paid feature. If it’s not enabled for this site, custom colors will be ignored and defaults used.
+        </p>
+        <div class="grid-3">
+          <label class="field">
+            <span class="label">
+              Background
+              <span id="styleLock" class="lock" title="Requires AdvancedStyling feature">LOCKED</span>
+            </span>
+            <input id="bgColor" type="color" value="#111827" />
+          </label>
+          <label class="field">
+            <span class="label">Text</span>
+            <input id="textColor" type="color" value="#F9FAFB" />
+          </label>
+          <label class="field">
+            <span class="label">Accent</span>
+            <input id="accentColor" type="color" value="#F59E0B" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Save</h2>
+        <div class="actions">
+          <button id="saveBtn" class="btn primary">Save configuration</button>
+          <span id="status" class="status"></span>
+        </div>
+        <pre id="warnings" class="warnings"></pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
