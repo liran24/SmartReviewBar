@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3EA977C6-5E2B-405C-9B73-5B431DEC8320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStickyReviewer.Domain", "src\SmartStickyReviewer.Domain\SmartStickyReviewer.Domain.csproj", "{1AB076BC-AC9C-446B-8561-8E612FDA7207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStickyReviewer.Application", "src\SmartStickyReviewer.Application\SmartStickyReviewer.Application.csproj", "{60F2E3EA-81DD-4579-A8D9-C736A4419272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStickyReviewer.Infrastructure", "src\SmartStickyReviewer.Infrastructure\SmartStickyReviewer.Infrastructure.csproj", "{467EE083-30B6-4814-AAB1-2D5A017ADA4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStickyReviewer.Api", "src\SmartStickyReviewer.Api\SmartStickyReviewer.Api.csproj", "{EF03B06F-282B-4BB0-B153-B864E210E94B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F14F249C-A438-407B-B1CD-98FA73422557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStickyReviewer.Tests", "tests\SmartStickyReviewer.Tests\SmartStickyReviewer.Tests.csproj", "{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AB076BC-AC9C-446B-8561-8E612FDA7207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB076BC-AC9C-446B-8561-8E612FDA7207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB076BC-AC9C-446B-8561-8E612FDA7207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB076BC-AC9C-446B-8561-8E612FDA7207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F2E3EA-81DD-4579-A8D9-C736A4419272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F2E3EA-81DD-4579-A8D9-C736A4419272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F2E3EA-81DD-4579-A8D9-C736A4419272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F2E3EA-81DD-4579-A8D9-C736A4419272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467EE083-30B6-4814-AAB1-2D5A017ADA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467EE083-30B6-4814-AAB1-2D5A017ADA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467EE083-30B6-4814-AAB1-2D5A017ADA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467EE083-30B6-4814-AAB1-2D5A017ADA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF03B06F-282B-4BB0-B153-B864E210E94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF03B06F-282B-4BB0-B153-B864E210E94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF03B06F-282B-4BB0-B153-B864E210E94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF03B06F-282B-4BB0-B153-B864E210E94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AB076BC-AC9C-446B-8561-8E612FDA7207} = {3EA977C6-5E2B-405C-9B73-5B431DEC8320}
+		{60F2E3EA-81DD-4579-A8D9-C736A4419272} = {3EA977C6-5E2B-405C-9B73-5B431DEC8320}
+		{467EE083-30B6-4814-AAB1-2D5A017ADA4F} = {3EA977C6-5E2B-405C-9B73-5B431DEC8320}
+		{EF03B06F-282B-4BB0-B153-B864E210E94B} = {3EA977C6-5E2B-405C-9B73-5B431DEC8320}
+		{A3A2D5CE-1D7A-4C55-9F74-5C7E10997809} = {F14F249C-A438-407B-B1CD-98FA73422557}
+	EndGlobalSection
+EndGlobal

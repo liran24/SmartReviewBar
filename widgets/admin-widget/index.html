@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Sticky Reviewer - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>🌟 Smart Sticky Reviewer</h1>
+            <p class="subtitle">Configure your review display widget</p>
+        </header>
+
+        <main class="admin-content">
+            <!-- Site Configuration Section -->
+            <section class="config-section">
+                <h2>Site Configuration</h2>
+                
+                <div class="form-group">
+                    <label for="siteId">Site ID</label>
+                    <input type="text" id="siteId" placeholder="Enter your Wix site ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="plan">Subscription Plan</label>
+                    <select id="plan">
+                        <option value="0">Free</option>
+                        <option value="1">Pro</option>
+                        <option value="2">Premium</option>
+                    </select>
+                    <div id="planFeatures" class="feature-list"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="primaryProvider">Primary Review Provider</label>
+                    <select id="primaryProvider">
+                        <option value="0">Judge.me</option>
+                        <option value="1">Manual</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isEnabled" checked>
+                        Enable Widget
+                    </label>
+                </div>
+            </section>
+
+            <!-- Fallback Configuration Section -->
+            <section class="config-section">
+                <h2>Fallback Settings</h2>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="useManualFallback">
+                        Use Manual Rating Fallback
+                    </label>
+                </div>
+
+                <div class="form-group" id="manualRatingGroup" style="display: none;">
+                    <label for="manualRating">Fallback Rating (0-5)</label>
+                    <input type="number" id="manualRating" min="0" max="5" step="0.1" value="4.5">
+                </div>
+
+                <div class="form-group" id="manualCountGroup" style="display: none;">
+                    <label for="manualReviewCount">Fallback Review Count</label>
+                    <input type="number" id="manualReviewCount" min="0" value="100">
+                </div>
+
+                <div class="form-group pro-feature" id="fallbackTextGroup">
+                    <label for="fallbackText">Fallback Text <span class="badge">Pro+</span></label>
+                    <input type="text" id="fallbackText" placeholder="Trusted by customers worldwide">
+                </div>
+
+                <div class="form-group premium-feature" id="notifyGroup">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="notifyOnFailure">
+                        Email Notification on Failure <span class="badge premium">Premium</span>
+                    </label>
+                </div>
+
+                <div class="form-group premium-feature" id="emailGroup" style="display: none;">
+                    <label for="notificationEmail">Notification Email</label>
+                    <input type="email" id="notificationEmail" placeholder="owner@store.com">
+                </div>
+            </section>
+
+            <!-- Styling Section -->
+            <section class="config-section">
+                <h2>Widget Styling</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bgColor">Background Color</label>
+                        <input type="color" id="bgColor" value="#ffffff">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="textColor">Text Color</label>
+                        <input type="color" id="textColor" value="#333333">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starColor">Star Color</label>
+                        <input type="color" id="starColor" value="#ffc107">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <select id="position">
+                        <option value="bottom">Bottom</option>
+                        <option value="top">Top</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fontSize">Font Size (px)</label>
+                    <input type="number" id="fontSize" min="10" max="24" value="14">
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showReviewCount" checked>
+                        Show Review Count
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showStars" checked>
+                        Show Star Rating
+                    </label>
+                </div>
+
+                <div class="form-group premium-feature">
+                    <label class="checkbox-label disabled-feature">
+                        <input type="checkbox" id="advancedStyling" disabled>
+                        Advanced Styling Options <span class="badge premium">Premium</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Manual Reviews Section -->
+            <section class="config-section">
+                <h2>Manual Reviews</h2>
+                <p class="section-info">Add manual reviews for products as fallback data</p>
+                
+                <div class="form-group">
+                    <label for="productId">Product ID</label>
+                    <input type="text" id="productId" placeholder="Enter product ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="productRating">Rating</label>
+                    <input type="number" id="productRating" min="0" max="5" step="0.1" value="4.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="productReviewCount">Review Count</label>
+                    <input type="number" id="productReviewCount" min="0" value="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="productDisplayText">Display Text</label>
+                    <input type="text" id="productDisplayText" placeholder="Based on customer reviews">
+                </div>
+
+                <button type="button" id="saveManualReview" class="btn btn-secondary">
+                    Save Manual Review
+                </button>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="config-section">
+                <h2>Widget Preview</h2>
+                <div id="widgetPreview" class="widget-preview">
+                    <div class="preview-bar">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating">4.5</span>
+                        <span class="count">(100 reviews)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button type="button" id="loadConfig" class="btn btn-secondary">
+                    Load Configuration
+                </button>
+                <button type="button" id="saveConfig" class="btn btn-primary">
+                    Save Configuration
+                </button>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="statusMessage" class="status-message" style="display: none;"></div>
+        </main>
+
+        <footer class="admin-footer">
+            <p>Smart Sticky Reviewer v1.0</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/workspace/src/SmartStickyReviewer.Domain/bin/Debug/net8.0/SmartStickyReviewer.Domain.deps.json
+/workspace/src/SmartStickyReviewer.Domain/bin/Debug/net8.0/SmartStickyReviewer.Domain.dll
+/workspace/src/SmartStickyReviewer.Domain/bin/Debug/net8.0/SmartStickyReviewer.Domain.pdb
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.AssemblyInfoInputs.cache
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.AssemblyInfo.cs
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.sourcelink.json
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.dll
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/refint/SmartStickyReviewer.Domain.dll
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/SmartStickyReviewer.Domain.pdb
+/workspace/src/SmartStickyReviewer.Domain/obj/Debug/net8.0/ref/SmartStickyReviewer.Domain.dll

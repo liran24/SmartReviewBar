@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Sticky Reviewer - Widget Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Demo Page Content -->
+    <div class="demo-page">
+        <header class="demo-header">
+            <h1>Product Page Demo</h1>
+            <p>This demonstrates the Smart Sticky Reviewer widget on a product page</p>
+        </header>
+
+        <main class="demo-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="image-placeholder">📦</div>
+                </div>
+                <div class="product-info">
+                    <h2>Amazing Product</h2>
+                    <p class="product-description">
+                        This is an example product page. The sticky review bar will appear 
+                        at the bottom (or top) of the screen based on configuration.
+                    </p>
+                    <p class="product-price">$99.99</p>
+                    <button class="btn-buy">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="demo-controls">
+                <h3>Widget Configuration</h3>
+                <div class="control-group">
+                    <label for="demoSiteId">Site ID:</label>
+                    <input type="text" id="demoSiteId" value="demo-site-123">
+                </div>
+                <div class="control-group">
+                    <label for="demoProductId">Product ID:</label>
+                    <input type="text" id="demoProductId" value="product-456">
+                </div>
+                <button id="refreshWidget" class="btn-refresh">Refresh Widget</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sticky Review Widget -->
+    <div id="smartStickyReviewer" class="sticky-reviewer" style="display: none;">
+        <div class="reviewer-content">
+            <div class="stars-container">
+                <span class="stars"></span>
+            </div>
+            <div class="rating-info">
+                <span class="rating-value"></span>
+                <span class="rating-text"></span>
+            </div>
+            <div class="review-count"></div>
+            <button class="close-btn" onclick="closeWidget()">×</button>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="widgetLoader" class="widget-loader" style="display: none;">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <script src="widget.js"></script>
+</body>
+</html>
