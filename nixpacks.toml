@@ -1,0 +1,8 @@
+# Railpack/Nixpacks configuration for .NET 8.0 application
+# This file tells Railpack how to build and run the SmartStickyReviewer API
+
+[phases.build]
+cmds = ["dotnet publish src/SmartStickyReviewer.Api/SmartStickyReviewer.Api.csproj -c Release -o out"]
+
+[start]
+cmd = "dotnet out/SmartStickyReviewer.Api.dll"
