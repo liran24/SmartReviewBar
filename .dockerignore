@@ -1,0 +1,14 @@
+.git
+.github
+.vs
+.vscode
+.idea
+
+**/bin
+**/obj
+**/*.user
+**/*.suo
+**/*.cache
+**/*.log
+
+**/node_modules
