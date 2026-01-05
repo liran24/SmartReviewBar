@@ -20,6 +20,15 @@ using SmartStickyReviewer.Infrastructure.Providers;
 var builder = WebApplication.CreateBuilder(args);
 
 // -----------------------------------------------------------------------------
+// TAILWAY/RAILWAY DEPLOYMENT SUPPORT
+// -----------------------------------------------------------------------------
+// PaaS platforms like Tailway inject the PORT environment variable
+// The application must listen on this port for successful deployment
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
+
+// -----------------------------------------------------------------------------
 // CONFIGURATION
 // -----------------------------------------------------------------------------
 
@@ -143,7 +152,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Enable Swagger in production for API documentation (optional, can be removed for security)
+if (!app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Smart Sticky Reviewer API v1");
+        c.RoutePrefix = "swagger";
+    });
+}
+
+// Skip HTTPS redirection in containerized environments (handled by reverse proxy)
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseCors("AllowWidgets");
 app.UseAuthorization();
 app.MapControllers();

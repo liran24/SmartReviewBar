@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartStickyReviewer.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c0c27c5b1649808d7a3be8c64e59d0333ee7947")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9462f6178c4385d60e8b195355d3522a7af44ade")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartStickyReviewer.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartStickyReviewer.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

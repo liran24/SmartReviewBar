@@ -76,6 +76,47 @@ The API will be available at `http://localhost:5000` (or the configured port).
 dotnet test
 ```
 
+## Deployment (Tailway/Railway)
+
+This application is configured for deployment on Tailway, Railway, and similar PaaS platforms.
+
+### Using Docker (Recommended)
+
+The included `Dockerfile` provides a multi-stage build:
+
+```bash
+# Build the image
+docker build -t smart-sticky-reviewer .
+
+# Run locally (testing)
+docker run -p 8080:8080 \
+  -e MongoDB__ConnectionString="your-mongodb-connection-string" \
+  -e MongoDB__DatabaseName="SmartStickyReviewer" \
+  smart-sticky-reviewer
+```
+
+### Using Nixpacks
+
+The `nixpacks.toml` configuration enables automatic builds on platforms that support Nixpacks.
+
+### Environment Variables
+
+Configure these environment variables in your deployment platform:
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `PORT` | The port the application listens on (auto-set by platform) | Auto |
+| `MongoDB__ConnectionString` | MongoDB Atlas connection string | Yes |
+| `MongoDB__DatabaseName` | Database name (default: SmartStickyReviewer) | No |
+| `ASPNETCORE_ENVIRONMENT` | Environment (Production/Development) | No |
+
+### Tailway Deployment Steps
+
+1. Connect your repository to Tailway
+2. Set the environment variables in Tailway dashboard
+3. Deploy - Tailway will automatically detect the Dockerfile or use Nixpacks
+4. The application will start on the assigned PORT
+
 ### Using the Widgets
 
 #### Admin Widget

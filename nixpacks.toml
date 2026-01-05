@@ -1,0 +1,20 @@
+# =============================================================================
+# Smart Sticky Reviewer - Nixpacks Configuration for Tailway Deployment
+# =============================================================================
+# This file configures nixpacks to build the .NET 8 application
+# =============================================================================
+
+[phases.setup]
+nixPkgs = ["dotnet-sdk_8"]
+
+[phases.build]
+cmds = [
+    "dotnet restore",
+    "dotnet publish src/SmartStickyReviewer.Api/SmartStickyReviewer.Api.csproj -c Release -o /app/publish"
+]
+
+[phases.install]
+cmds = []
+
+[start]
+cmd = "dotnet /app/publish/SmartStickyReviewer.Api.dll"
