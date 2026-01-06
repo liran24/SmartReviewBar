@@ -16,7 +16,8 @@ COPY src/SmartStickyReviewer.Infrastructure/SmartStickyReviewer.Infrastructure.c
 COPY src/SmartStickyReviewer.Api/SmartStickyReviewer.Api.csproj ./src/SmartStickyReviewer.Api/
 
 # Restore dependencies (cached if project files unchanged)
-RUN dotnet restore
+# Restore the deployable project (avoid requiring tests/ during container build)
+RUN dotnet restore ./src/SmartStickyReviewer.Api/SmartStickyReviewer.Api.csproj
 
 # Copy the rest of the source code
 COPY src/ ./src/
