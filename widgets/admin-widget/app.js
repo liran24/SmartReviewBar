@@ -4,7 +4,26 @@
  */
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000/api';
+// By default, assume the admin dashboard is served by the same host as the API,
+// and the API is available at `${origin}/api`.
+//
+// You can override this for local dev or separate hosting by adding `?apiBaseUrl=...`
+// e.g. `/widgets/admin-widget/index.html?apiBaseUrl=https://your-domain.com/api`
+const API_BASE_URL = (() => {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const fromQuery = params.get('apiBaseUrl');
+        if (fromQuery) return fromQuery.replace(/\/+$/, '');
+
+        // Optional global override
+        const fromGlobal = window.SmartStickyReviewerAdminConfig?.apiBaseUrl;
+        if (fromGlobal) return String(fromGlobal).replace(/\/+$/, '');
+
+        return `${window.location.origin}/api`;
+    } catch {
+        return 'http://localhost:5000/api';
+    }
+})();
 
 // DOM Elements
 const elements = {
